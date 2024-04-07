@@ -1,32 +1,67 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adaptive Video Player with PiP, Quality Selector, and Auto Quality</title>
-<style>
-  video {
-    width: 100%;
-    height: auto;
-  }
-  #pipButton, #qualitySelector {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    padding: 10px 20px;
-  }
-  #qualitySelector {
-    right: 100px;
-  }
-</style>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://i.ibb.co/Ks7VP1f/1712385014729-min.png" type="image/x-icon">
+    <meta property="og:image" content="https://i.ibb.co/Ks7VP1f/1712385014729-min.png" itemprop="thumbnailUrl">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>%s | LazyDeveloperr</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type='text/css' href="https://drive----google.com/uc?export=view&id=1pVLG4gZy7jdow3sO-wFS06aP_A9QX0O6">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Delius">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.9/plyr.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
 
-<video id="videoPlayer" controls>
-  <!-- Video sources will be dynamically loaded based on selection -->
-</video>
-<button id="pipButton">PiP</button>
-<select id="qualitySelector">
+<body class="bg-black">
+    
+
+                <!-- web title -->
+                <div class="container-fluid">
+                    <a class="navbar-brand  text-light fw-bold " href="https://telegram.me/devmovies2">
+                        <span class="bg-clip-text sm:text-[25px] text-[22px] text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+                            DEV MOVIES
+                          </span>
+                    </a>
+                  </div>
+            
+
+    <div class="bg-black  text-light"  >
+        <!-- file Name -> to be displayed here  -->
+        <div class="justify-content-center align-items-center w-100 d-flex">
+            <div id="file-name" class="tex-center text-lg max:w-74  p-2 flex-wrap text-center justify-center items-center">
+                <p class="fw-bold"> 
+                    <span id="myDiv" class="h6 flex-wrap text-center justify-center items-center card-title wow animate__animated animate__fadeInRight" >
+                        %s
+                    </span>
+                </p>
+            </div>
+        </div>
+        <!-- Online Video Player -> to be displayed here  -->
+        <div class="justify-content-center align-items-center w-100 d-flex  flex-wrap">
+            <div class="lg:w-9/12 lg:px-12 lg:py-4 w-full  border border-danger wow animate__animated animate__fadeInLeft">
+                <video id="videoPlayer" class="player " playsinline controls>
+               
+                </video>
+            </div>
+        </div>
+
+        <!-- External video player section -->
+            <div class="justify-content-center align-items-center w-100 d-flex">
+                    <div class="row d-flex w-100 justify-content-center align-items-center">
+
+                       
+                       
+
+                         Select quality-<select style="color: rgb(255, 255, 255); width: 100px; border-radius: 1rem; border: cyan solid .1em;" id="qualitySelector" class="m-10 bg-black">
   <option value="240p">240p</option>
   <option value="360p">360p</option>
   <option value="480p">480p</option>
@@ -35,9 +70,217 @@
   <option value="4k">4K</option>
 </select>
 
-<script src="divytech.js">
- 
-</script>
+                   <br>   <div class="col-lg-7 m-10 col-12 d-flex justify-content-start align-items-center ">
+                            <p class="h4 px-2 mt-4 bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-orange-600 font-bold mb-2">Play with...</p>
+                        </div>   
 
+                        <div class="col-lg-6 col-10 d-flex justify-center items-center flex-wrap pb-3 gap-2 wow animate__animated animate__fadeIn">
+                            <div onclick="vlc_player()" class="card card-body col-lg-3  col-5 bg-dark text-secondary text-center justify-content-center align-items-center hover:shadow-md hover:shadow-gray-400 hover:translate-y-[-5px] transition transition-all duration-300 wow animate__animated animate__fadeInLeft">
+                                <svg class="wow animate__animated animate__shakeX  animate__delay-1s" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 64 64"><linearGradient id="d2lfkA6lemjIH1JdWslHIa_74320_gr1" x1="32" x2="32" y1="16.021" y2="39.25" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset=".437" stop-color="#6dc7ff"></stop><stop offset="1" stop-color="#e6abff"></stop></linearGradient><path fill="url(#d2lfkA6lemjIH1JdWslHIa_74320_gr1)" d="M32,31.25c2.891,0,5.255-0.323,6.939-0.712l2.409,7.664C37.765,39.116,33.881,39.25,32,39.25 c-1.88,0-5.765-0.134-9.347-1.049l2.408-7.663C26.745,30.927,29.11,31.25,32,31.25z M32.5,24.25c1.554,0,2.999-0.141,4.343-0.38 l-2.429-7.729c-0.587,0.063-1.211,0.109-1.914,0.109c-1.1,0-2.062-0.092-2.876-0.229l-2.404,7.651 C28.816,24.034,30.574,24.25,32.5,24.25z"></path><linearGradient id="d2lfkA6lemjIH1JdWslHIb_74320_gr2" x1="32.105" x2="32.105" y1="7.415" y2="56" gradientUnits="userSpaceOnUse" spreadMethod="reflect"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#d2lfkA6lemjIH1JdWslHIb_74320_gr2)" d="M56.903,50.041l-2.216-10.779c-0.513-2.265-2.52-3.847-4.881-3.847H45.09l-8.059-24.451 c-0.7-2.123-2.726-3.549-5.04-3.549c-2.314,0-4.339,1.426-5.039,3.549l-8.058,24.451h-4.491c-2.362,0-4.369,1.582-4.885,3.866 L7.31,50.021c-0.327,1.442,0.019,2.937,0.947,4.099C9.212,55.314,10.645,56,12.19,56h39.828c1.545,0,2.979-0.685,3.934-1.88 C56.88,52.958,57.226,51.464,56.903,50.041z M19.096,41.19l9.755-29.601c0.429-1.301,1.69-2.175,3.14-2.175s2.711,0.874,3.14,2.175 l9.774,29.655c0.201,0.72,0.088,1.331-0.357,1.923c-1.509,2.001-6.32,3.246-12.557,3.247c-0.004,0-0.007,0-0.011,0 c-6.223,0-11.017-1.229-12.511-3.208C19,42.586,18.886,41.933,19.096,41.19z M54.39,52.872C53.816,53.589,52.952,54,52.019,54H12.19 c-0.934,0-1.798-0.411-2.371-1.128C9.39,52.334,9.181,51.677,9.202,51H17v-2H9.561l0.411-2H14v-2h-3.616l1.089-5.297 c0.3-1.326,1.532-2.288,2.93-2.288h3.832l-1.05,3.188c-0.392,1.376-0.154,2.693,0.689,3.81c1.921,2.544,7.062,4.003,14.106,4.003 c0.003,0,0.008,0,0.011,0c7.06-0.002,12.219-1.476,14.153-4.044c0.823-1.093,1.058-2.37,0.678-3.694 c-0.003-0.013-0.007-0.025-0.011-0.038l-1.062-3.224h4.058c1.397,0,2.63,0.962,2.926,2.269L53.825,45H50v2h4.236l0.411,2H47v2h8.008 C55.029,51.671,54.821,52.332,54.39,52.872z"></path></svg>
+                                VLC Player
+                            </div>
+                            <div onclick="mx_player()" class="card card-body col-lg-3  col-5 bg-dark text-secondary text-center justify-content-center align-items-center hover:shadow-md hover:shadow-gray-400 hover:translate-y-[-5px] transition transition-all duration-300 wow animate__animated animate__fadeInRight">
+                                <svg class="wow animate__animated animate__shakeX animate__delay-2s" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="#ffeb9b"></circle><circle cx="32" cy="32" r="21" fill="#f9dd8f"></circle><path fill="#8d6c9f" d="M32,6c14.336,0,26,11.664,26,26S46.336,58,32,58S6,46.336,6,32S17.664,6,32,6 M32,4	C16.536,4,4,16.536,4,32s12.536,28,28,28s28-12.536,28-28S47.464,4,32,4L32,4z"></path><path fill="#fff8ee" d="M42.5,31.134l-17-9.815c-0.667-0.385-1.5,0.096-1.5,0.866v19.63c0,0.77,0.833,1.251,1.5,0.866 l17-9.815C43.167,32.481,43.167,31.519,42.5,31.134z"></path><path fill="#8d6c9f" d="M25,43.818c-0.344,0-0.688-0.09-1-0.271c-0.626-0.361-1-1.009-1-1.732v-19.63 c0-0.723,0.374-1.371,1-1.732c0.623-0.362,1.371-0.363,2,0l17,9.815v0c0.626,0.361,1,1.009,1,1.732s-0.374,1.371-1,1.732l-17,9.815 C25.687,43.728,25.343,43.818,25,43.818z M25,22.185v19.63L42,32l0.5-0.866L42,32L25,22.185z"></path><g><path fill="#8d6c9f" d="M53.596,37.162c-0.063,0-0.126-0.006-0.189-0.018l-1.964-0.376 c-0.542-0.104-0.897-0.628-0.794-1.17c0.104-0.542,0.627-0.898,1.171-0.793l1.964,0.376c0.542,0.104,0.897,0.628,0.794,1.17 C54.485,36.829,54.066,37.162,53.596,37.162z"></path><path fill="#8d6c9f" d="M51.997,42.133c-0.139,0-0.28-0.029-0.415-0.091l-1.819-0.832 c-0.502-0.229-0.723-0.823-0.493-1.325c0.229-0.501,0.82-0.726,1.325-0.493l1.819,0.832c0.502,0.229,0.723,0.823,0.493,1.325 C52.739,41.916,52.377,42.133,51.997,42.133z"></path><path fill="#8d6c9f" d="M49.278,46.59c-0.216,0-0.435-0.07-0.618-0.214l-1.571-1.237c-0.434-0.342-0.508-0.97-0.167-1.404 c0.343-0.433,0.97-0.51,1.405-0.167l1.571,1.237c0.434,0.342,0.508,0.97,0.167,1.404C49.867,46.459,49.574,46.59,49.278,46.59z"></path><path fill="#8d6c9f" d="M45.591,50.28c-0.296,0-0.589-0.131-0.787-0.381l-1.237-1.571 c-0.341-0.434-0.267-1.063,0.167-1.404c0.436-0.343,1.063-0.266,1.405,0.167l1.237,1.571c0.341,0.434,0.267,1.063-0.167,1.404 C46.025,50.21,45.807,50.28,45.591,50.28z"></path><path fill="#8d6c9f" d="M41.134,52.998c-0.38,0-0.742-0.217-0.91-0.584l-0.832-1.819c-0.229-0.502-0.009-1.096,0.493-1.325 c0.504-0.233,1.096-0.008,1.325,0.493l0.832,1.819c0.229,0.502,0.009,1.096-0.493,1.325 C41.414,52.969,41.272,52.998,41.134,52.998z"></path><path fill="#8d6c9f" d="M36.161,54.595c-0.47,0-0.89-0.333-0.981-0.812l-0.377-1.964c-0.104-0.542,0.252-1.066,0.794-1.17 c0.54-0.105,1.066,0.251,1.171,0.793l0.377,1.964c0.104,0.542-0.252,1.066-0.794,1.17C36.287,54.589,36.224,54.595,36.161,54.595z"></path></g></svg>
+                                Mx Player
+                            </div>
+                            <div onclick="playit_player()" class="card card-body col-lg-3  col-5 bg-dark text-secondary text-center justify-content-center align-items-center hover:shadow-md hover:shadow-gray-400 hover:translate-y-[-5px] transition transition-all duration-300 wow animate__animated animate__fadeInLeft">
+                                <svg class="wow animate__animated animate__shakeX  animate__delay-1s " xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 48 48" id="b"><defs><style>.c{fill:none;stroke:#22abbd;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="c" d="m17,32.5v5c0,2.7614-2.2386,5-5,5h0c-2.7614,0-5-2.2386-5-5"/><path class="c" d="m7,37.5c0-2.7614,2.2386-5,5-5h25c2.2,0,4-1.8,4-4V9.5c0-2.2-1.8-4-4-4H11c-2.2,0-4,1.8-4,4v28"/><path class="c" d="m29.1876,18.467l-9.1448-5.2652c-.822-.4733-1.8482.12-1.8482,1.0685v10.5304c0,.9485,1.0262,1.5418,1.8482,1.0685l9.1448-5.2652c.8237-.4742.8237-1.6628,0-2.137Z"/></svg>
+                                Play-it
+                            </div>
+                            
+                        
+                        </div>
+                </div>
+            </div>
+            <div class="justify-content-center align-items-center w-100 d-flex">
+                    <div class="row d-flex w-100 justify-content-center align-items-center">
+                        <div class="col-lg-8 col-10  py-2 text-center bg-danger rounded-4 text-sm wow animate__animated animate__FadeIn">
+                            Video not playing ? possibly because your browser or the player doesn't support codec please download and watch.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extra Cards -->
+            <div class="justify-content-center align-items-center w-100 d-flex ">
+                    <div class="row d-flex w-100 justify-content-center align-items-center">
+                        <!-- title -->
+                        <div class="col-lg-11 col-12 d-flex justify-content-start align-items-center mt-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="60" viewBox="0 0 64 64"><linearGradient id="NYqtCkFrnKYpo6Y7I~_Wea_FRRACRKRsw2s_gr1" x1="31.287" x2="31.287" y1="3.383" y2="62.905" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#NYqtCkFrnKYpo6Y7I~_Wea_FRRACRKRsw2s_gr1)" d="M23.749,48.868c-9.61,2.669,5.846,8.183,18.081,2.971c-2.004-0.775-3.439-1.669-3.439-1.669 c-5.458,1.027-7.99,1.107-12.942,0.546C21.36,50.249,23.749,48.868,23.749,48.868z"></path><linearGradient id="NYqtCkFrnKYpo6Y7I~_Web_FRRACRKRsw2s_gr2" x1="30.914" x2="30.914" y1="3.911" y2="62.581" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#NYqtCkFrnKYpo6Y7I~_Web_FRRACRKRsw2s_gr2)" d="M40.365,43.613c-7.23,1.364-11.408,1.32-16.699,0.785c-4.091-0.415-1.412-2.357-1.412-2.357 c-10.587,3.442,5.89,7.346,20.684,3.108C41.365,44.606,40.365,43.613,40.365,43.613z"></path><linearGradient id="NYqtCkFrnKYpo6Y7I~_Wec_FRRACRKRsw2s_gr3" x1="39.018" x2="39.018" y1="3.213" y2="62.957" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#NYqtCkFrnKYpo6Y7I~_Wec_FRRACRKRsw2s_gr3)" d="M46.036,13.383c0,0-21.54,5.331-11.252,17.079c3.035,3.463-0.797,6.579-0.797,6.579 s7.706-3.942,4.167-8.879C34.848,23.557,32.313,21.27,46.036,13.383z"></path><linearGradient id="NYqtCkFrnKYpo6Y7I~_Wed_FRRACRKRsw2s_gr4" x1="30.574" x2="30.574" y1="3.373" y2="62.927" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#NYqtCkFrnKYpo6Y7I~_Wed_FRRACRKRsw2s_gr4)" d="M51.041,53.916c0,0,1.768,1.448-1.947,2.569c-7.063,2.128-29.395,2.77-35.599,0.085 c-2.23-0.965,1.952-2.304,3.268-2.585c1.372-0.296,2.156-0.241,2.156-0.241c-2.48-1.737-16.031,3.412-6.883,4.886 C36.983,62.653,57.512,56.818,51.041,53.916z"></path><linearGradient id="NYqtCkFrnKYpo6Y7I~_Wee_FRRACRKRsw2s_gr5" x1="29.622" x2="29.622" y1="3.213" y2="62.957" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#NYqtCkFrnKYpo6Y7I~_Wee_FRRACRKRsw2s_gr5)" d="M42.465,38.765c1.199-0.817,2.857-1.525,2.857-1.525s-4.721,0.841-9.422,1.237 c-5.753,0.481-11.928,0.574-15.026,0.161c-7.337-0.977,4.023-3.669,4.023-3.669s-4.411-0.297-9.837,2.32 C8.645,40.384,30.93,41.792,42.465,38.765z"></path><linearGradient id="NYqtCkFrnKYpo6Y7I~_Wef_FRRACRKRsw2s_gr6" x1="50.02" x2="50.02" y1=".999" y2="64.288" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#NYqtCkFrnKYpo6Y7I~_Wef_FRRACRKRsw2s_gr6)" d="M45.276,46.675C45.222,46.829,45.04,47,45.04,47c15.704-4.351,9.93-15.336,2.423-12.555 c-0.659,0.247-1.005,0.817-1.005,0.817s0.415-0.177,1.345-0.381C51.598,34.048,57.034,40.236,45.276,46.675z"></path><linearGradient id="NYqtCkFrnKYpo6Y7I~_Weg_FRRACRKRsw2s_gr7" x1="32" x2="32" y1="3.213" y2="62.957" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#NYqtCkFrnKYpo6Y7I~_Weg_FRRACRKRsw2s_gr7)" d="M32.225,34.854c-2.293-5.208-10.071-9.766,0.004-17.76 c12.564-9.966,6.116-16.447,6.116-16.447c2.602,10.295-9.172,13.403-13.422,19.815C22.029,24.83,26.344,29.523,32.225,34.854z"></path><linearGradient id="NYqtCkFrnKYpo6Y7I~_Weh_FRRACRKRsw2s_gr8" x1="36.106" x2="36.106" y1="3.212" y2="62.958" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1a6dff"></stop><stop offset="1" stop-color="#c822ff"></stop></linearGradient><path fill="url(#NYqtCkFrnKYpo6Y7I~_Weh_FRRACRKRsw2s_gr8)" d="M45.697,60.706c-9.607,1.804-21.456,1.593-28.484,0.437c0,0,1.439,1.188,8.837,1.661 c11.256,0.719,28.541-0.399,28.95-5.712C55,57.092,54.213,59.106,45.697,60.706z"></path></svg>
+                            <p class="sm:text-[30px] text-lg  mt-4 px-2 py-2  border-bottom border-primary-subtle  bg-clip-text text-transparent bg-gradient-to-r from-pink-200 to-red-600 font-semibold mb-2 wow animate__animated animate__rubberBand">Join me now...</p>
+                        </div>
+                        <!-- contents -->
+                        <div class="col-lg-11 col-12 ">
+                            <div class=" grid lg:grid-cols-4 grid-cols-2  d-flex flex-row flex-wrap  justify-content-start align-items-center rounded-3 overflow-hidden wow animate__animated animate__flipInX" id="video-cards">
+                                    <!-- video cards loaded here -->
+                            </div>
+                        </div>
+                        
+                </div>
+            </div>
+    </div>
+
+        <footer class="bg-dark justify-content-around align-items-center">
+            <div class="container-fluid  justify-content-center align-itemsd x. -center">
+                <!-- Section: Social media -->
+                <section class="lg:p-4 p-2 justify-content-center align-items-center text-center ">  
+                    
+                    <!-- Telegram -->
+                    <a class="btn btn-outline-light btn-floating m-1 rounded-circle p-2 border-secondary wow animate__animated animate__fadeInDown animate__delay-1s hover:shadow-md hover:shadow-gray-400 hover:translate-y-[-5px] transition transition-all duration-200" href="https://telegram.me/devbots2" target="_blank" role="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 256 256"><defs><linearGradient id="logosTelegram0" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#2aabee"/><stop offset="100%" stop-color="#229ed9"/></linearGradient></defs><path fill="url(#logosTelegram0)" d="M128 0C94.06 0 61.48 13.494 37.5 37.49A128.038 128.038 0 0 0 0 128c0 33.934 13.5 66.514 37.5 90.51C61.48 242.506 94.06 256 128 256s66.52-13.494 90.5-37.49c24-23.996 37.5-56.576 37.5-90.51c0-33.934-13.5-66.514-37.5-90.51C194.52 13.494 161.94 0 128 0"/><path fill="#fff" d="M57.94 126.648c37.32-16.256 62.2-26.974 74.64-32.152c35.56-14.786 42.94-17.354 47.76-17.441c1.06-.017 3.42.245 4.96 1.49c1.28 1.05 1.64 2.47 1.82 3.467c.16.996.38 3.266.2 5.038c-1.92 20.24-10.26 69.356-14.5 92.026c-1.78 9.592-5.32 12.808-8.74 13.122c-7.44.684-13.08-4.912-20.28-9.63c-11.26-7.386-17.62-11.982-28.56-19.188c-12.64-8.328-4.44-12.906 2.76-20.386c1.88-1.958 34.64-31.748 35.26-34.45c.08-.338.16-1.598-.6-2.262c-.74-.666-1.84-.438-2.64-.258c-1.14.256-19.12 12.152-54 35.686c-5.1 3.508-9.72 5.218-13.88 5.128c-4.56-.098-13.36-2.584-19.9-4.708c-8-2.606-14.38-3.984-13.82-8.41c.28-2.304 3.46-4.662 9.52-7.072"/></svg>
+                    </a>
+              
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-light btn-floating m-1 rounded-circle p-2 border-secondary wow animate__animated animate__fadeInUp animate__delay-2s hover:shadow-md hover:shadow-gray-400 hover:translate-y-[-5px] transition transition-all duration-300" href="https://cutt.ly/Ww3Fa95J" target="_blank" role="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 256 256"><g fill="none"><rect width="256" height="256" fill="url(#skillIconsInstagram0)" rx="60"/><rect width="256" height="256" fill="url(#skillIconsInstagram1)" rx="60"/><path fill="#fff" d="M128.009 28c-27.158 0-30.567.119-41.233.604c-10.646.488-17.913 2.173-24.271 4.646c-6.578 2.554-12.157 5.971-17.715 11.531c-5.563 5.559-8.98 11.138-11.542 17.713c-2.48 6.36-4.167 13.63-4.646 24.271c-.477 10.667-.602 14.077-.602 41.236s.12 30.557.604 41.223c.49 10.646 2.175 17.913 4.646 24.271c2.556 6.578 5.973 12.157 11.533 17.715c5.557 5.563 11.136 8.988 17.709 11.542c6.363 2.473 13.631 4.158 24.275 4.646c10.667.485 14.073.604 41.23.604c27.161 0 30.559-.119 41.225-.604c10.646-.488 17.921-2.173 24.284-4.646c6.575-2.554 12.146-5.979 17.702-11.542c5.563-5.558 8.979-11.137 11.542-17.712c2.458-6.361 4.146-13.63 4.646-24.272c.479-10.666.604-14.066.604-41.225s-.125-30.567-.604-41.234c-.5-10.646-2.188-17.912-4.646-24.27c-2.563-6.578-5.979-12.157-11.542-17.716c-5.562-5.562-11.125-8.979-17.708-11.53c-6.375-2.474-13.646-4.16-24.292-4.647c-10.667-.485-14.063-.604-41.23-.604zm-8.971 18.021c2.663-.004 5.634 0 8.971 0c26.701 0 29.865.096 40.409.575c9.75.446 15.042 2.075 18.567 3.444c4.667 1.812 7.994 3.979 11.492 7.48c3.5 3.5 5.666 6.833 7.483 11.5c1.369 3.52 3 8.812 3.444 18.562c.479 10.542.583 13.708.583 40.396c0 26.688-.104 29.855-.583 40.396c-.446 9.75-2.075 15.042-3.444 18.563c-1.812 4.667-3.983 7.99-7.483 11.488c-3.5 3.5-6.823 5.666-11.492 7.479c-3.521 1.375-8.817 3-18.567 3.446c-10.542.479-13.708.583-40.409.583c-26.702 0-29.867-.104-40.408-.583c-9.75-.45-15.042-2.079-18.57-3.448c-4.666-1.813-8-3.979-11.5-7.479s-5.666-6.825-7.483-11.494c-1.369-3.521-3-8.813-3.444-18.563c-.479-10.542-.575-13.708-.575-40.413c0-26.704.096-29.854.575-40.396c.446-9.75 2.075-15.042 3.444-18.567c1.813-4.667 3.983-8 7.484-11.5c3.5-3.5 6.833-5.667 11.5-7.483c3.525-1.375 8.819-3 18.569-3.448c9.225-.417 12.8-.542 31.437-.563zm62.351 16.604c-6.625 0-12 5.37-12 11.996c0 6.625 5.375 12 12 12s12-5.375 12-12s-5.375-12-12-12zm-53.38 14.021c-28.36 0-51.354 22.994-51.354 51.355c0 28.361 22.994 51.344 51.354 51.344c28.361 0 51.347-22.983 51.347-51.344c0-28.36-22.988-51.355-51.349-51.355zm0 18.021c18.409 0 33.334 14.923 33.334 33.334c0 18.409-14.925 33.334-33.334 33.334c-18.41 0-33.333-14.925-33.333-33.334c0-18.411 14.923-33.334 33.333-33.334"/><defs><radialGradient id="skillIconsInstagram0" cx="0" cy="0" r="1" gradientTransform="matrix(0 -253.715 235.975 0 68 275.717)" gradientUnits="userSpaceOnUse"><stop stop-color="#fd5"/><stop offset=".1" stop-color="#fd5"/><stop offset=".5" stop-color="#ff543e"/><stop offset="1" stop-color="#c837ab"/></radialGradient><radialGradient id="skillIconsInstagram1" cx="0" cy="0" r="1" gradientTransform="matrix(22.25952 111.2061 -458.39518 91.75449 -42.881 18.441)" gradientUnits="userSpaceOnUse"><stop stop-color="#3771c8"/><stop offset=".128" stop-color="#3771c8"/><stop offset="1" stop-color="#60f" stop-opacity="0"/></radialGradient></defs></g></svg>
+                    </a>
+
+                    <!--Donation-->
+                    <a class="btn btn-outline-light btn-floating m-1 rounded-circle p-2 border-secondary wow animate__animated animate__fadeInRight animate__delay-2s hover:shadow-md hover:shadow-gray-400 hover:translate-y-[-5px] transition transition-all duration-300" href="upi://pay?pa=Divyansh7489@upi&cu=INR" target="_blank" role="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 36 36"><path fill="white" d="M18 2a16 16 0 1 0 16 16A16 16 0 0 0 18 2m5.88 9H26a1 1 0 0 1 0 2h-1.74v.19a6.09 6.09 0 0 1-6 6.2h-2l6.82 8.06a1.25 1.25 0 0 1-1.91 1.62l-8.54-10.13a1.25 1.25 0 0 1 1-2.06h4.71a3.59 3.59 0 0 0 3.48-3.69v-.2h-9a1 1 0 0 1 0-2h8.32a3.41 3.41 0 0 0-2.78-1.5h-5.61a1.25 1.25 0 0 1 0-2.5H26a1 1 0 0 1 0 2h-3.32a6.23 6.23 0 0 1 1.2 2.01" class="clr-i-solid clr-i-solid-path-1"/><path fill="none" d="M0 0h36v36H0z"/></svg>
+                    </a>
+                  </section>
+
+                  <!-- For LazyDeveloper // credit --- Please don't remove footer credit -->
+                  <div class="row flex-row-reverse text-secondary justify-content-center align-items-center">
+                      <div class="col-lg-6 col-12 justify-content-center align-items-center text-center p-1 wow animate__animated animate__fadeInRight">
+                        <ul class="navbar-nav">
+                            <li class="navbar-item bg-gradient-to-r from-pink-500 rounded-xl p-2"> <h5 class="text-gray-100 font-semibold text-sm">"Bad decisions make good stories.” – Ellis Vidler</h5><sup class="badge badge-error text-xs text-gray-300 font-monospace">-Ellis Vidler</sup> </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-12 justify-content-center align-items-center text-center p-1 wow animate__animated animate__fadeInLeft">
+                        <ul class="navbar-nav">
+                            <li class="navbar-item bg-gradient-to-l from-pink-500 rounded-xl p-2 "> <h5 class="text-gray-100 font-semibold text-sm" > “A day without sunshine is like, you know, night.”</h5> <sup class="badge  text-xs text-gray-300 font-monospace">–Steve Martin</sup> </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-4 justify-content-center align-items-center text-center mt-lg-0 mt-5  pt-lg-0 pt-4 wow animate__animated animate__fadeInUp">
+                        <ul class="navbar-nav ">
+                            <li class="nav-item justify-center items-center flex"  style="margin-top: -40px;">
+                                <img src="https://i.ibb.co/Ks7VP1f/1712385014729-min.png" height="140px" class="rounded-3 " alt="logo">
+                            </li>
+                            <!-- <li class="nav-item justify-center items-center text-center">
+                                <a  class="nav-link h1 text-center sm:-m-1 -ms-4"><h5><a class="font-bold" href="https://telegram.me/devmovies2" target="_blank">Dev Movies : </a>Run and managed by <a href="https://telegram.me/devbots2" target="_blank" class="bg-clip-text text-[16px] text-transparent bg-gradient-to-r from-orange-500 to-pink-500">DEVBOTS</a> & <a href="https://telegram.me/CHAMPAKLALBOT" target="_blank">MANAGER(<a href="https://telegram.me/CHAMPAKLALBOT" target="_blank" class="bg-clip-text text-[16px] text-transparent bg-gradient-to-r from-orange-500 to-pink-500">DEVBOTS</a>)</a> </h5></a>
+                            </li> -->
+                        </ul>
+                    </div>
+                    
+                    <!-- Copyright -->
+                </div> 
+                <div class=" justify-center items-center text-center w-full text-center flex ">
+                    <div  class="text-gray-400 text-center sm:-m-1 -ms-4 m-2 p-2">
+                        <h5>
+                            <a class="font-bold" href="https://telegram.me/devmovies2" target="_blank">Dev Movies : </a>Run and managed by <a href="https://telegram.me/devbots2" target="_blank" class="bg-clip-text text-[16px] text-transparent bg-gradient-to-r from-orange-500 to-pink-500">DEVBOTS</a>
+                            </a> 
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center text-xs p-3 dark:text-light text-light gap-2" style="background-color: rgba(0, 0, 0, 0.2);">
+                <!-- For LazyDeveloper // credit --- Please don't remove footer credit -->
+            ©  <script type="text/JavaScript">
+                var theDate=new Date() 
+                    document.write(theDate.getFullYear()) 
+            </script> Copyright :
+    
+              
+                All right reserved
+            </div>   
+            <center><h4>TEMPLATE BY - <a href="https://telegram.me/LazyDeveloper">LazyDeveloper</a></h4></center>
+        </footer>
+
+<!-- yt api section -->
+<script src="https://apis.google.com/js/api.js"></script>
+
+    
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script>
+        var div = document.getElementById('myDiv');
+        var text = div.textContent;
+
+        if(text.length > 60){
+            div.textContent = text.slice(0, 60)+"....";
+        }
+
+    </script>
+    
+    <script src="https://cdn.plyr.io/3.6.9/plyr.js"></script>
+	<script>
+        const controls = [
+            'play-large',
+            'rewind','play', 
+            'fast-forward', 
+            'progress', 
+            'current-time',
+            'duration',
+            'mute',
+            'volume',
+            'captions',
+            'settings',
+            'pip',
+            'airplay',
+            'download',
+            'fullscreen'
+        ];
+        document.addEventListener('DOMContentLoaded', () => {
+            const player = Plyr.setup('.player', { controls });
+        });
+
+    </script>
+    <!-- iterate animation -->
+
+
+    <!-- disabling right click -->
+    <script>
+        document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
+    document.addEventListener('keydown', function (e) {
+        if (
+            e.key === 'F12' ||
+            (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+            (e.ctrlKey && e.key === 'u') ||
+            e.ctrlKey ||
+            e.shiftKey ||
+            e.altKey
+        ) {
+            e.preventDefault();
+        }
+    });
+    </script>
+    
+    
+   
+    <script>
+        const videolink = window.location.href;
+        const  lazyLink = videolink
+
+        function vlc_player() {
+            const openLazyLink = lazyLink;
+            const openVlc = `vlc://${openLazyLink}`;
+            window.location.href = openVlc;
+        }
+	    
+	function mx_player() {
+            const openLazyLink = lazyLink;
+            const openMx = `intent:${openLazyLink}#Intent;package=com.mxtech.videoplayer.ad;end`;
+            window.location.href = openMx;
+        }
+        
+	function playit_player() {
+    	const openLazyLink = lazyLink;
+    	const openPlayit = `playit://playerv2/video?url=${openLazyLink}`;
+   	 window.location.href = openPlayit;
+	}
+	
+        function lazyDownload() {
+            const openLazyLink = lazyLink;
+            window.location.href = openLazyLink;
+        }
+
+    </script>
+<script src="divytech.js"></script>
 </body>
 </html>
