@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adaptive Video Player</title>
+<style>
+  video {
+    width: 100%;
+    height: auto;
+  }
+</style>
+</head>
+<body>
+
+<video id="videoPlayer" controls>
+  <source src="path/to/240p_video.mp4" type="video/mp4" data-res="240">
+  <source src="path/to/360p_video.mp4" type="video/mp4" data-res="360">
+  <source src="path/to/480p_video.mp4" type="video/mp4" data-res="480">
+  <source src="path/to/720p_video.mp4" type="video/mp4" data-res="720">
+  <source src="path/to/1080p_video.mp4" type="video/mp4" data-res="1080">
+  <source src="path/to/4k_video.mp4" type="video/mp4" data-res="4k">
+  Your browser does not support HTML5 video.
+</video>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var videoPlayer = document.getElementById('videoPlayer');
+    var sources = videoPlayer.getElementsByTagName('source');
+    var networkSpeed = navigator.connection.downlink; // Get the network speed in Mbps
+
+    // Function to change video source based on network speed
+    function changeVideoSource() {
+      for (var i = 0; i < sources.length; i++) {
+        var source = sources[i];
+        var res = source.getAttribute('data-res');
+        if ((networkSpeed > 5 && res === '720') ||
+            (networkSpeed > 10 && res === '1080') ||
+            (networkSpeed > 25 && res === '4k')) {
+          videoPlayer.src = source.src;
+          break;
+        }
+      }
+    }
+
+    // Listen for changes in the network
+    navigator.connection.addEventListener('change', function() {
+      networkSpeed = navigator.connection.downlink;
+      changeVideoSource();
+    });
+
+    // Set initial video source
+    changeVideoSource();
+  });
+</script>
+
+</body>
+</html>
