@@ -48,7 +48,10 @@
         </div>
         <!-- Online Video Player -> to be displayed here  -->
         <div class="justify-content-center align-items-center w-100 d-flex  flex-wrap">
-            <div class="lg:w-9/12 lg:px-12 lg:py-4 w-full  border border-danger wow animate__animated animate__fadeInLeft">
+            <div class="lg:w-9/12 lg:px-12 lg:py-4 w-full hover:shadow-none wow animate__animated animate__fadeInLeft" style="border: .1em rgb(132 204 22) solid; -webkit-box-shadow: 0px 0px 9px 2px rgba(155,247,8,1);
+            -moz-box-shadow: 0px 0px 9px 2px rgba(155,247,8,1);
+            box-shadow: 0px 0px 9px 2px rgba(155,247,8,1);
+             ">
                 <video id="player" controls preload="metadata" poster="https://blogger.googleusercontent.com/img/a/AVvXsEg11zYvwZ_zAcBzOWiPDQWOdQZ9UMBfu0MmP9T8ONLIwKvKjFh8AVOJN4AgnAGQmRzWcTu1OvKT_xKQOOJAJ6IGqG7N_anWPG9bMIY3r5z0lnlo38EkAGccg5gj9CQQ6RFHKUHxb1ilc-7oTAg9oPL9WkzF98wExPU0NCZ4o7AfWCeajBqxs55a7NwFWC_x" class="plyr">
                     <source src="https://prod-ent-live-gm.jiocinema.com/hls/live/2100323/hd_akamai_androidmob_avc_hin_ipl_s1_m1090424/master.m3u8" type="application/x-mpegURL"/>
                     </video>
@@ -79,8 +82,8 @@
             </div>
             <div class="justify-content-center align-items-center w-100 d-flex">
                     <div class="row d-flex w-100 justify-content-center align-items-center">
-                        <div class="col-lg-8 col-10  py-2 text-center bg-danger rounded-4 text-sm wow animate__animated animate__FadeIn">
-                            Video not playing ? refresh the page <i class="fa fa-refresh" aria-hidden="true"></i>
+                        <div class="col-lg-8 col-10  py-2 text-center bg-gradient-to-r from-teal-700 to-teal-400 font-bold rounded-4 text-sm wow animate__animated animate__FadeIn">
+                            <marquee behavior="" direction="">Video not playing ? refresh the page <i class="fa fa-refresh" aria-hidden="true"></i></marquee>
                     </div>
                 </div>
             </div>
