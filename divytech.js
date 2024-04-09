@@ -4,13 +4,14 @@
     var qualitySelector = document.getElementById('qualitySelector');
 
 var videoSources = {
-  '240p': 'https://prod-ent-live-gm.jiocinema.com/hls/live/2100323/hd_akamai_androidmob_avc_hin_ipl_s1_m1080424/master_240p.m3u8',
-  '360p': 'https://prod-ent-live-gm.jiocinema.com/hls/live/2100323/hd_akamai_androidmob_avc_hin_ipl_s1_m1080424/master_360p.m3u8',
-  '480p': 'https://prod-ent-live-gm.jiocinema.com/hls/live/2100323/hd_akamai_androidmob_avc_hin_ipl_s1_m1080424/master_480p.m3u8',
-  '720p': 'https://prod-ent-live-gm.jiocinema.com/hls/live/2100323/hd_akamai_androidmob_avc_hin_ipl_s1_m1080424/master_720p.m3u8',
-  '1080p': 'https://prod-ent-live-gm.jiocinema.com/hls/live/2100323/hd_akamai_androidmob_avc_hin_ipl_s1_m1080424/master_1080p.m3u8',
-  '4k': 'https://prod-ent-live-gm.jiocinema.com/hls/live/2100322/uhd_akamai_ctv_avc_hin_ipl_s1_m1080424/master.m3u8'
+  '240p': 'https://prod-ent-live-gm.jiocinema.com/hls/live/2100323/hd_akamai_androidmob_avc_hin_ipl_s1_m1090424/master_240p.m3u8',
+  '360p': 'https://prod-ent-live-gm.jiocinema.com/hls/live/2100323/hd_akamai_androidmob_avc_hin_ipl_s1_m1090424/master_360p.m3u8',
+  '480p': 'https://prod-ent-live-gm.jiocinema.com/hls/live/2100323/hd_akamai_androidmob_avc_hin_ipl_s1_m1090424/master_480p.m3u8',
+  '720p': 'https://prod-ent-live-gm.jiocinema.com/hls/live/2100323/hd_akamai_androidmob_avc_hin_ipl_s1_m1090424/master_720p.m3u8',
+  '1080p': 'https://prod-ent-live-gm.jiocinema.com/hls/live/2100323/hd_akamai_androidmob_avc_hin_ipl_s1_m1090424/master_1080p.m3u8',
+  '4k': 'https://prod-ent-live-gm.jiocinema.com/hls/live/2100322/uhd_akamai_ctv_avc_hin_ipl_s1_m1090424/master.m3u8'
 };
+
 
 
     // Function to change video source based on selected quality
